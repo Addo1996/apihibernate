@@ -11,95 +11,103 @@ import jakarta.persistence.Table;
 @Table(name = "peliculas")
 public class Pelicula {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Column(nullable = false, length = 100)
-    private String nombre;
+	@Column(nullable = false, length = 100)
+	private String nombre;
 
-    @Column(nullable = false, length = 100)
-    private String director;
+	@Column(nullable = false, length = 100)
+	private String director;
 
-    @Column(nullable = false, length = 100)
-    private String genero;
+	@Column(nullable = false, length = 100)
+	private String genero;
 
-    @Column(nullable = false)
-    private int duracion;
+	@Column(nullable = false)
+	private int duracion;
 
-    @Column(nullable = false)
-    private boolean disponible;
+	@Column(nullable = false)
+	private boolean disponible;
 
-    // Constructor vacio
-    public Pelicula() {
-    }
+	@Column(nullable = false)
+	private double calificacion;
 
-    // Constructor con parametros
-    public Pelicula(Long id, String nombre, String director,
-            String genero, int duracion, boolean disponible) {
-        this.id = id;
-        this.nombre = nombre;
-        this.director = director;
-        this.genero = genero;
-        this.duracion = duracion;
-        this.disponible = disponible;
-    }
+	public double getCalificacion() {
+		return calificacion;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public void setCalificacion(double calificacion) {
+		this.calificacion = calificacion;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	// Constructor vacio
+	public Pelicula() {
+	}
 
-    public String getNombre() {
-        return nombre;
-    }
+	// Constructor con parametros
+	public Pelicula(Long id, String nombre, String director, String genero, int duracion, boolean disponible,
+			double calificacion) {
+		this.id = id;
+		this.nombre = nombre;
+		this.director = director;
+		this.genero = genero;
+		this.duracion = duracion;
+		this.disponible = disponible;
+		this.calificacion = calificacion;
+	}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getDirector() {
-        return director;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setDirector(String director) {
-        this.director = director;
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    public String getGenero() {
-        return genero;
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
+	public String getDirector() {
+		return director;
+	}
 
-    public int getDuracion() {
-        return duracion;
-    }
+	public void setDirector(String director) {
+		this.director = director;
+	}
 
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
-    }
+	public String getGenero() {
+		return genero;
+	}
 
-    public boolean isDisponible() {
-        return disponible;
-    }
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
-    }
+	public int getDuracion() {
+		return duracion;
+	}
 
-    @Override
-    public String toString() {
-        return "Pelicula [id=" + id
-                + ", nombre=" + nombre
-                + ", director=" + director
-                + ", genero=" + genero
-                + ", duracion=" + duracion
-                + ", disponible=" + disponible + "]";
-    }
+	public void setDuracion(int duracion) {
+		this.duracion = duracion;
+	}
+
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+
+	@Override
+	public String toString() {
+		return "Pelicula [id=" + id + ", nombre=" + nombre + ", director=" + director + ", genero=" + genero
+				+ ", duracion=" + duracion + ", disponible=" + disponible + ", calificacion=" + calificacion + "]";
+	}
 }
